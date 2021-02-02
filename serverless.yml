@@ -1,11 +1,6 @@
 #frameworkVersion: "1.35.1"
-plugins:
-  - serverless-dotenv-plugin
+stage: ${env.stage}
+accessKey: ${env.ACCESS_KEY}
+secertKey: ${env.SECRET_KEY}
 sasiFrontendWeb:
   component: "@sls-next/serverless-component@{1.19.0-alpha.30}"
-
-environment:
-  SLS_DEBUG: true
-  stage: ${env:stage}
-  accessKey: ${env:ACCESS_KEY}
-  secertKey: ${env:SECRET_KEY}
