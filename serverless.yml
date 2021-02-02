@@ -1,29 +1,11 @@
-service: sasi-frontend-web
-
 #frameworkVersion: "1.35.1"
 plugins:
   - serverless-dotenv-plugin
-
-provider:
-  name: aws
-  runtime: nodejs12.x
-  stage: ${env:stage}
-  region: eu-west-1
+sasiFrontendWeb:
+  component: "@sls-next/serverless-component@{1.19.0-alpha.30}"
 
 environment:
   SLS_DEBUG: true
   stage: ${env:stage}
   accessKey: ${env:ACCESS_KEY}
   secertKey: ${env:SECRET_KEY}
-
-package:
-  exclude:
-    - ./**
-myNextApplication:
-  component: "@sls-next/serverless-component@{1.19.0-alpha.30}"
-
-custom:
-  stage: ${opt:stage, self:provider.stage}
-
-resources:
-  - ${file(assets-pmbplus.yml)}
