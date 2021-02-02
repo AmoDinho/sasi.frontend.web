@@ -19,5 +19,8 @@
     "react-dom": "^16.7.0",
     "tailwindcss": "^2.0.2"
   },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^2.1.1"
+  },
   "license": "MIT"
 }
