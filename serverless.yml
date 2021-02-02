@@ -20,7 +20,7 @@ package:
   exclude:
     - ./**
 myNextApplication:
-  component: "@sls-next/serverless-component@{version_here}"
+  component: "@sls-next/serverless-component@{1.19.0-alpha.30}"
 
 custom:
   stage: ${opt:stage, self:provider.stage}
