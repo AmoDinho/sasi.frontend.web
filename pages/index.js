@@ -3,7 +3,7 @@ import App from "../components/App";
 
 const IndexPage = () => (
   <App>
-    <h1 className="text-green-500">WELCOME TO SASSY WORLD</h1>
+    <h1 className="text-green-500 font-display">WELCOME TO SASSY WORLD</h1>
 
     <div className="p-4 bg-gradient-to-r from-gradient-two-colorA to-gradient-two-colorB"></div>
   </App>
