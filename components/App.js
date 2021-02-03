@@ -1,6 +1,8 @@
+import NavBar from "./ui/navigation/NavBar";
 export default function App({ children }) {
   return (
     <main>
+      <NavBar />
       {children}
       <style jsx global>{`
         * {
