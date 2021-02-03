@@ -17,15 +17,33 @@ module.exports = {
 
       black: "#000",
       white: "#fff",
-      // gradient:{
-      //   "one": ,
-      //   "two":,
-      //   "three":,
-      //   "four":,
-      //   "five:",
-      //   "six":,
+      gradient: {
+        one: {
+          colorA: "#68C6B9",
+          colorB: "#1EA1B0",
+        },
+        two: {
+          colorA: "#68C6B9",
+          colorB: "#1EA1B0",
+        },
+        three: {
+          colorA: "#68C6B9",
+          colorB: "#1EA1B0",
+        },
+        four: {
+          colorA: "#68C6B9",
+          colorB: "#1EA1B0",
+        },
+        five: {
+          colorA: "#68C6B9",
+          colorB: "#1EA1B0",
+        },
+        six: {
+          colorA: "#68C6B9",
+          colorB: "#1EA1B0",
+        },
+      },
 
-      //         },
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",
