@@ -4,6 +4,8 @@ import App from "../components/App";
 const IndexPage = () => (
   <App>
     <h1 className="text-green-500">WELCOME TO SASSY WORLD</h1>
+
+    <div className="p-4 bg-gradient-to-r from-green-400 to-blue-400"></div>
   </App>
 );
 
