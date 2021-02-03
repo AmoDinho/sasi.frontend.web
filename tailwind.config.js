@@ -775,5 +775,21 @@ module.exports = {
     transitionDelay: ["responsive"],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      const border = {
+        ".border-top": {
+          borderTop: "#F45B69  8px solid",
+        },
+      };
+      const borderBottom = {
+        ".border-bottom": {
+          borderBottom: "#F45B69  8px solid",
+        },
+      };
+
+      addComponents(borderBottom);
+      addComponents(border);
+    },
+  ],
 };
