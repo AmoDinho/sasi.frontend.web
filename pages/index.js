@@ -3,9 +3,10 @@ import App from "../components/App";
 
 const IndexPage = () => (
   <App>
-    <h1 className="text-green-500 font-display">WELCOME TO SASSY WORLD</h1>
-
-    <div className="p-4 bg-gradient-to-r from-gradient-two-colorA to-gradient-two-colorB"></div>
+    <h1 className="text-green-500 font-display p-5">WELCOME TO SASSY WORLD</h1>
+    <p className="text-green-700 font-display p-5">
+      We are busy making a PLACE to get to multirracial stock images :D
+    </p>
   </App>
 );
 
