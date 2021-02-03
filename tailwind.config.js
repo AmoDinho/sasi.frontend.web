@@ -779,12 +779,12 @@ module.exports = {
     function ({ addComponents }) {
       const border = {
         ".border-top": {
-          borderTop: "#F45B69  8px solid",
+          borderTop: "#FAAD40  8px solid",
         },
       };
       const borderBottom = {
         ".border-bottom": {
-          borderBottom: "#F45B69  8px solid",
+          borderBottom: "#FAAD40  8px solid",
         },
       };
 
