@@ -17,7 +17,15 @@ module.exports = {
 
       black: "#000",
       white: "#fff",
+      // gradient:{
+      //   "one": ,
+      //   "two":,
+      //   "three":,
+      //   "four":,
+      //   "five:",
+      //   "six":,
 
+      //         },
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",
