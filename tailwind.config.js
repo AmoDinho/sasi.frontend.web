@@ -23,24 +23,24 @@ module.exports = {
           colorB: "#1EA1B0",
         },
         two: {
-          colorA: "#68C6B9",
-          colorB: "#1EA1B0",
+          colorA: "#FAAD40",
+          colorB: "#F15B5D",
         },
         three: {
-          colorA: "#68C6B9",
-          colorB: "#1EA1B0",
+          colorA: "#F3EC5F",
+          colorB: "#7AC14A",
         },
         four: {
-          colorA: "#68C6B9",
-          colorB: "#1EA1B0",
+          colorA: "#D85FA3",
+          colorB: "#B2217C",
         },
         five: {
-          colorA: "#68C6B9",
-          colorB: "#1EA1B0",
+          colorA: "#73CAD6",
+          colorB: "#416EB6",
         },
         six: {
-          colorA: "#68C6B9",
-          colorB: "#1EA1B0",
+          colorA: "#9973BC",
+          colorB: "#4A469F",
         },
       },
 
