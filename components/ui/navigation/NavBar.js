@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <header className="border-top bg-transparent flex items-center justify-between flex-wrap p-6">
       <div className="flex items-center flex-no-shrink text">
-        <h1 className="text-red font-bold font-display lg:text-3xl s:text-xl">
+        <h1 className="text-yellow-500 font-bold font-display lg:text-3xl s:text-xl">
           Sasi{" "}
         </h1>
       </div>
