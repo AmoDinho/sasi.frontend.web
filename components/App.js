@@ -12,7 +12,7 @@ export default function App({ children }) {
         }
         body {
           margin: 0;
-          padding: 25px 50px;
+          // padding: 25px 50px;
           background: #1c212e;
         }
         a {
