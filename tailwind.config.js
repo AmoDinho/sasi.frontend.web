@@ -274,6 +274,7 @@ module.exports = {
       default: "1",
     },
     fontFamily: {
+      display: "Montserrat",
       sans: [
         "system-ui",
         "-apple-system",
