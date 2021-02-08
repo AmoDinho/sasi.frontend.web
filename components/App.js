@@ -27,6 +27,7 @@ export default function App({ children }) {
           max-width: 650px;
         }
         button {
+          font-family: Montserrat;
           align-items: center;
           background-color: #22bad9;
           border: 0;
