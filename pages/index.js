@@ -26,6 +26,7 @@ const IndexPage = () => {
 };
 
 
+
 // export async function getStaticProps() {
 //   const apolloClient = initializeApollo();
 
