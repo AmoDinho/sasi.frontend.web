@@ -1,9 +1,20 @@
+import { useEffect } from "react";
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "../lib/apolloClient";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import "../styles/index.css";
+import { initGA, logPageView } from "../constants/googleAnalytics";
 export default function App({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps);
+  const router = useRouter();
+  useEffect(() => {
+    initGA();
+
+    if (!router.asPath.includes("?")) {
+      logPageView();
+    }
+  }, []);
 
   return (
     <ApolloProvider client={apolloClient}>
