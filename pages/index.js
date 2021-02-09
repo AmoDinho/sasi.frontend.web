@@ -2,12 +2,12 @@ import App from "../components/App";
 import { SocialButton } from "../components/ui/buttons";
 import { BodyOne } from "../components/ui/Typography";
 import { HeadingOne } from "../components/ui/Typography";
-import { HeadingTwo } from "../components/ui/Typography";
-import { socialLinks } from "../constants";
+import { socialLinks, track } from "../constants";
 
 // import { initializeApollo, addApolloState } from "../lib/apolloClient";
 
 const IndexPage = () => {
+  track("App.HomePage");
   return (
     <App>
       <HeadingOne className="text-center flex justify-center my-2 ">
