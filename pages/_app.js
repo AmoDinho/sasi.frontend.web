@@ -16,6 +16,14 @@ export default function App({ Component, pageProps }) {
     }
   }, []);
 
+  useEffect(() => {
+    router.events.on("routeChangeComplete", logPageView);
+
+    return () => {
+      router.events.off("routeChangeComplete", logPageView);
+    };
+  }, [router.events]);
+
   return (
     <ApolloProvider client={apolloClient}>
       <Head>
