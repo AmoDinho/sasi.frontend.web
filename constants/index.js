@@ -1,5 +1,5 @@
 import mixpanel from "mixpanel-browser";
-mixpanel.init(process.env.GATSBY_MIXPANEL);
+mixpanel.init("d276a161adcc9b99b31200bd2a555a62");
 export const track = (name, props) => {
   mixpanel.track(name, props);
 };
