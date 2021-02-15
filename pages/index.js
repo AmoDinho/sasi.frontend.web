@@ -7,6 +7,7 @@ import { HeadingOne } from "../components/ui/Typography";
 import { socialLinks, track } from "../constants";
 import { GET_ALL_PHOTOS } from "../graphql/photos/queries";
 import PhotoCard from "../components/ui/cards/PhotoCard";
+import { ThreeColumnGrid } from "../components/ui/loaders";
 const IndexPage = () => {
   const [photos, setPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
@@ -18,7 +19,12 @@ const IndexPage = () => {
     }
   }, []);
 
-  if (loading) return <p>Loading</p>;
+  if (loading)
+    return (
+      <App>
+        <ThreeColumnGrid />
+      </App>
+    );
   if (error) return <p>{error.message}</p>;
   return (
     <App>
