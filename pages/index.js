@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     if (data) {
-      setPhotos(data.getAllPhots);
+      setPhotos(data.getAllPhotos);
     }
   }, []);
 
@@ -23,13 +23,14 @@ const IndexPage = () => {
   return (
     <App>
       <div className="grid grid-cols-3 gap-2">
-        {photos.map((photo) => (
-          <PhotoCard
-            imageURL={photo.s3URL}
-            key={photo.ID}
-            imageAlt={photo.ID}
-          />
-        ))}
+        {photos.length !== 0 &&
+          photos.map((photo) => (
+            <PhotoCard
+              imageURL={photo.s3URL}
+              key={photo.ID}
+              imageAlt={photo.ID}
+            />
+          ))}
       </div>
       <div className=" mt-12 p-3 flex justify-center">
         {socialLinks.map((link, index) => (
