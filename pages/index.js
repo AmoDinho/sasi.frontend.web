@@ -22,7 +22,7 @@ const IndexPage = () => {
   if (error) return <p>{error.message}</p>;
   return (
     <App>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-2">
         {photos.length !== 0 &&
           photos.map((photo) => (
             <PhotoCard
