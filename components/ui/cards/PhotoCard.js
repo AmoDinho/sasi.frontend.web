@@ -7,7 +7,7 @@ const PhotoCard = ({ imageURL, imageAlt, className }) => {
     <img
       src={imageURL}
       alt={imageAlt}
-      className={className}
+      className={`${className} rounded-lg`}
       //   width={250}
       //   height={100}
     />
