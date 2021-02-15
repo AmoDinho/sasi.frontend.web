@@ -4,12 +4,18 @@ import { SocialButton } from "../components/ui/buttons";
 import { BodyOne } from "../components/ui/Typography";
 import { HeadingOne } from "../components/ui/Typography";
 import { socialLinks, track } from "../constants";
-
+import { GET_ALL_PHOTOS } from "../graphql/photos/queries";
 // import { initializeApollo, addApolloState } from "../lib/apolloClient";
 
 const IndexPage = () => {
-  const { data, loading, error } = useQuery();
+  const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
   track("App.HomePage");
+
+  if (data) {
+    console.log(data);
+  }
+  if (loading) return <p>Loading</p>;
+  if (error) return <p>{error.message}</p>;
   return (
     <App>
       <div className=" mt-12 p-3 flex justify-center">
