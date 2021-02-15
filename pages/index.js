@@ -22,6 +22,15 @@ const IndexPage = () => {
   if (error) return <p>{error.message}</p>;
   return (
     <App>
+      <div className="grid grid-cols-3 gap-2">
+        {photos.map((photo) => (
+          <PhotoCard
+            imageURL={photo.s3URL}
+            key={photo.ID}
+            imageAlt={photo.ID}
+          />
+        ))}
+      </div>
       <div className=" mt-12 p-3 flex justify-center">
         {socialLinks.map((link, index) => (
           <SocialButton className="mx-3 my-3" url={link.url} key={index}>
