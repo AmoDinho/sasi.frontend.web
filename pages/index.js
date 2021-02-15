@@ -9,15 +9,15 @@ import { GET_ALL_PHOTOS } from "../graphql/photos/queries";
 import PhotoCard from "../components/ui/cards/PhotoCard";
 import { ThreeColumnGrid } from "../components/ui/loaders";
 const IndexPage = () => {
-  const [photos, setPhotos] = useState([]);
+  // const [photos, setPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
   track("App.HomePage");
 
-  useEffect(() => {
-    if (data) {
-      setPhotos(data.getAllPhotos);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (data) {
+  //     setPhotos(data.getAllPhotos);
+  //   }
+  // }, []);
 
   if (loading)
     return (
@@ -29,8 +29,8 @@ const IndexPage = () => {
   return (
     <App>
       <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-2">
-        {photos.length !== 0 &&
-          photos.map((photo) => (
+        {data.getAllPhotos.length !== 0 &&
+          data.getAllPhotos.map((photo) => (
             <PhotoCard
               imageURL={photo.s3URL}
               key={photo.ID}
