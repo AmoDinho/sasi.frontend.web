@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import App from "../components/App";
 import { SocialButton } from "../components/ui/buttons";
@@ -5,15 +6,18 @@ import { BodyOne } from "../components/ui/Typography";
 import { HeadingOne } from "../components/ui/Typography";
 import { socialLinks, track } from "../constants";
 import { GET_ALL_PHOTOS } from "../graphql/photos/queries";
-// import { initializeApollo, addApolloState } from "../lib/apolloClient";
-
+import PhotoCard from "../components/ui/cards/PhotoCard";
 const IndexPage = () => {
+  const [photos, setPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
   track("App.HomePage");
 
-  if (data) {
-    console.log(data);
-  }
+  useEffect(() => {
+    if (data) {
+      setPhotos(data.getAllPhots);
+    }
+  }, []);
+
   if (loading) return <p>Loading</p>;
   if (error) return <p>{error.message}</p>;
   return (
