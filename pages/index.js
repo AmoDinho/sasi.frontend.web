@@ -10,31 +10,55 @@ const IndexPage = () => {
   track("App.HomePage");
   return (
     <App>
-      <HeadingOne className="text-center flex justify-center my-2 ">
+      <HeadingOne className="text-center  font-medium bg-clip-text my text-transparent bg-gradient-to-r from-gradient-three-colorB to-gradient-three-colorA flex justify-center mt-10 my-2 ">
         {" "}
         Welcome to SASI World
       </HeadingOne>
-      <BodyOne className=" p-4 text-center">
-        I'm baby readymade thundercats offal, semiotics swag subway tile
-        actually jianbing. Enamel pin pok pok cliche live-edge disrupt put a
-        bird on it tote bag master cleanse subway tile heirloom cred kombucha
-        seitan kogi lo-fi. Raclette wolf celiac man braid, migas neutra
-        taxidermy twee chartreuse adaptogen kombucha put a bird on it. Vape
-        chicharrones pok pok try-hard humblebrag mumblecore. Waistcoat wayfarers
-        tofu, pork belly viral edison bulb raw denim selvage cred gochujang
-        mixtape cardigan distillery etsy leggings. Mixtape lomo readymade pok
-        pok gluten-free crucifix. Etsy blog lo-fi everyday carry tbh.
-      </BodyOne>
+      <div className="flex flex-col text-center">
+        <BodyOne className=" mt-5">
+          Finding the right visuals to use for your business can be a daunting
+          task!
+        </BodyOne>
 
-      <div className=" p-3 flex justify-center">
+        <BodyOne className=" mt-5">This is why we are creating SASI.</BodyOne>
+        <BodyOne className=" mt-5">
+          Content that is created to make your business stand out.
+        </BodyOne>
+        <BodyOne className=" mt-5">
+          Finding the right visuals to use for your business can be a daunting
+          task!
+        </BodyOne>
+
+        <BodyOne className="mt-5">This is why we are creating SASI.</BodyOne>
+
+        <BodyOne className="mt-5">
+          Content that is created to make your business stand out.
+        </BodyOne>
+
+        <BodyOne className="mt-5">
+          Get access to empowering imagery that promotes realness and celebrate
+          our unique differences.
+        </BodyOne>
+        <BodyOne className="mt-5">
+          Sign up and we'll notify you as soon as you can download some Free
+          Quality content! Get SASI imagery that speaks to your audience.
+        </BodyOne>
+        <BodyOne className="mt-5">
+          An easier way of marketing your product and business with relevant
+          content.
+        </BodyOne>
+      </div>
+
+      <div className=" mt-12 p-3 flex justify-center">
         {socialLinks.map((link, index) => (
-          <SocialButton key={index}>{link.icon} </SocialButton>
+          <SocialButton className="mx-3 my-3" url={link.url} key={index}>
+            {link.icon}{" "}
+          </SocialButton>
         ))}
       </div>
     </App>
   );
 };
-
 
 // export async function getStaticProps() {
 //   const apolloClient = initializeApollo();
