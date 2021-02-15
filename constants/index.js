@@ -4,6 +4,11 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import mixpanel from "mixpanel-browser";
+mixpanel.init("d276a161adcc9b99b31200bd2a555a62");
+export const track = (name, props) => {
+  mixpanel.track(name, props);
+};
 
 export const socialLinks = [
   {
