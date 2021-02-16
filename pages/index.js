@@ -10,9 +10,9 @@ import PhotoCard from "../components/ui/cards/PhotoCard";
 import { ThreeColumnGrid } from "../components/ui/loaders";
 const IndexPage = () => {
   // const [photos, setPhotos] = useState([]);
-  const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
+  // const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
   track("App.HomePage");
-
+  const loading = true;
   // useEffect(() => {
   //   if (data) {
   //     setPhotos(data.getAllPhotos);
@@ -22,7 +22,13 @@ const IndexPage = () => {
   if (loading)
     return (
       <App>
-        <ThreeColumnGrid />
+        <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-">
+          {Array(5)
+            .fill("")
+            .map((i) => (
+              <ThreeColumnGrid key={i} />
+            ))}
+        </div>
       </App>
     );
   if (error) return <p>{error.message}</p>;
