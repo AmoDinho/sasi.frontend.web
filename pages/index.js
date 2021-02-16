@@ -26,6 +26,13 @@ const IndexPage = () => {
       </App>
     );
   if (error) return <p>{error.message}</p>;
+
+  const things = [
+    "col-start-2 col-span-2",
+    "col-end-3 col-span-2",
+    "col-start-1 col-end-4",
+  ];
+  const thing = things[Math.floor(Math.random() * things.length)];
   return (
     <App>
       <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-2">
@@ -35,6 +42,7 @@ const IndexPage = () => {
               imageURL={photo.s3URL}
               key={photo.ID}
               imageAlt={photo.ID}
+              // className={thing}
             />
           ))}
       </div>
