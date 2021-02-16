@@ -21,7 +21,7 @@ const IndexPage = () => {
 
   if (loading)
     return (
-      <App>
+      <>
         <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-">
           {Array(5)
             .fill("")
@@ -29,7 +29,7 @@ const IndexPage = () => {
               <ThreeColumnGrid key={i} />
             ))}
         </div>
-      </App>
+      </>
     );
   if (error) return <p>{error.message}</p>;
 
@@ -40,7 +40,7 @@ const IndexPage = () => {
   // ];
   // const thing = things[Math.floor(Math.random() * things.length)];
   return (
-    <App>
+    <>
       <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-2">
         {data.getAllPhotos.length !== 0 &&
           data.getAllPhotos.map((photo) => (
@@ -59,7 +59,7 @@ const IndexPage = () => {
           </SocialButton>
         ))}
       </div>
-    </App>
+    </>
   );
 };
 
