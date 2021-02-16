@@ -37,7 +37,7 @@ const IndexPage = () => {
     );
   if (error) return <p>{error.message}</p>;
 
-  console.log(loading);
+  console.log(data.getAllPhotos.length);
   // const things = [
   //   "col-start-2 col-span-2",
   //   "col-end-3 col-span-2",
@@ -46,7 +46,7 @@ const IndexPage = () => {
   // const thing = things[Math.floor(Math.random() * things.length)];
   return (
     <>
-      <div className="grid  md:grid-rows-3 md:grid-flow-col sm:grid-cols-1 gap-2">
+      <div className="grid  md:grid-rows-3 md:grid-cols-2 md:grid-flow-col sm:grid-cols-1 gap-2">
         {data.getAllPhotos.length !== 0 &&
           data.getAllPhotos.map((photo) => (
             <PhotoCard
