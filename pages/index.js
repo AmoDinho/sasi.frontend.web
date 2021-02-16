@@ -1,4 +1,5 @@
 import LandingPage from "../components/landingPage";
+import App from "../components/App";
 const IndexPage = () => {
   return (
     <App>

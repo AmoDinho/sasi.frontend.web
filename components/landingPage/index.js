@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import App from "../components/App";
+import App from "../App";
 import { SocialButton } from "../ui/buttons";
 import { BodyOne } from "../ui/Typography";
 import { HeadingOne } from "../ui/Typography";
-import { socialLinks, track } from "../constants";
+import { socialLinks, track } from "../../constants";
 import { GET_ALL_PHOTOS } from "../../graphql/photos/queries";
 import PhotoCard from "../ui/cards/PhotoCard";
 import { ThreeColumnGrid } from "../ui/loaders";
@@ -12,7 +12,6 @@ const IndexPage = () => {
   // const [photos, setPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
   track("App.HomePage");
-  // const loading = true;
   // useEffect(() => {
   //   if (data) {
   //     setPhotos(data.getAllPhotos);
@@ -22,17 +21,23 @@ const IndexPage = () => {
   if (loading)
     return (
       <>
-        <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-">
-          {Array(5)
+        <div className="grid md:grid-rows-3  sm:grid-rows-1 place-items-center gap-2 p-4">
+          {/* {Array(5)
             .fill("")
             .map((i) => (
               <ThreeColumnGrid key={i} />
-            ))}
+            ))} */}
+          <ThreeColumnGrid />
+
+          <ThreeColumnGrid />
+
+          <ThreeColumnGrid />
         </div>
       </>
     );
   if (error) return <p>{error.message}</p>;
 
+  console.log(loading);
   // const things = [
   //   "col-start-2 col-span-2",
   //   "col-end-3 col-span-2",
@@ -41,7 +46,7 @@ const IndexPage = () => {
   // const thing = things[Math.floor(Math.random() * things.length)];
   return (
     <>
-      <div className="grid md:grid-cols-3  sm:grid-cols-1 gap-2">
+      <div className="grid  grid-rows-3 grid-flow-col gap-2">
         {data.getAllPhotos.length !== 0 &&
           data.getAllPhotos.map((photo) => (
             <PhotoCard
