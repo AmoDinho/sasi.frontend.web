@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import App from "../components/App";
-import { SocialButton } from "../components/ui/buttons";
-import { BodyOne } from "../components/ui/Typography";
-import { HeadingOne } from "../components/ui/Typography";
+import { SocialButton } from "../ui/buttons";
+import { BodyOne } from "../ui/Typography";
+import { HeadingOne } from "../ui/Typography";
 import { socialLinks, track } from "../constants";
-import { GET_ALL_PHOTOS } from "../graphql/photos/queries";
-import PhotoCard from "../components/ui/cards/PhotoCard";
-import { ThreeColumnGrid } from "../components/ui/loaders";
+import { GET_ALL_PHOTOS } from "../../graphql/photos/queries";
+import PhotoCard from "../ui/cards/PhotoCard";
+import { ThreeColumnGrid } from "../ui/loaders";
 const IndexPage = () => {
   // const [photos, setPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
