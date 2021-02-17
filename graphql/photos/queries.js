@@ -14,3 +14,18 @@ export const GET_ALL_PHOTOS = gql`
     }
   }
 `;
+
+export const GET_A_PHOTO = gql`
+  query GET_A_PHOTO {
+    getAPhoto {
+      ID
+      contributorID
+      contributorUsername
+      createdAt
+      updatedAt
+      s3URL
+      fileSize
+      dimensions
+    }
+  }
+`;

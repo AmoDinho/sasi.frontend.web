@@ -5,3 +5,5 @@ const ViewAPhoto = (props) => {
 };
 
 export default ViewAPhoto;
+
+//http://localhost:3000/photo/1
