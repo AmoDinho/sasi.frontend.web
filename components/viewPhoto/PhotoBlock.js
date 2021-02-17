@@ -1,15 +1,15 @@
 import React from "react";
 import image from "next/image";
-import HeadingTwo from "../Typography/HeadingTwo";
-import BodyOne from "../Typography/BodyOne";
-import GreenButton from "../buttons/GreenButton";
+import HeadingTwo from "../ui/Typography/HeadingTwo";
+import BodyOne from "../ui/Typography/BodyOne";
+import GreenButton from "../ui/buttons/GreenButton";
 
-const PhotoBlock = ({ imageURL, imageAlt, className, contributorName }) => {
+const PhotoBlock = ({ photo, className, ...props }) => {
   return (
     <div className=" grid-rows-2 grid-flow-col gap-2">
       <div>
         <img
-          src={imageURL}
+          src={photo.imageURL}
           alt={imageAlt}
           className={`${className} rounded-lg`}
         />
