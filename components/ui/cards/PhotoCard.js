@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-
+// add inclick event that direcst to photo
+// passes ID in function
+//routing ;ibrary in next
 const PhotoCard = ({ imageURL, imageAlt, className }) => {
   return (
     <img

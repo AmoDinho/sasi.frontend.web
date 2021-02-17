@@ -16,8 +16,8 @@ export const GET_ALL_PHOTOS = gql`
 `;
 
 export const GET_A_PHOTO = gql`
-  query GET_A_PHOTO {
-    getAPhoto {
+  query GET_A_PHOTO($ID: String!) {
+    getAPhoto(ID: $ID) {
       ID
       contributorID
       contributorUsername
