@@ -1,6 +1,6 @@
 import React from "react";
 import image from "next/image";
-import HeadingOne from "../Typography/HeadingOne";
+import HeadingTwo from "../Typography/HeadingTwo";
 import BodyOne from "../Typography/BodyOne";
 import GreenButton from "../buttons/GreenButton";
 
@@ -15,7 +15,7 @@ const PhotoBlock = ({ imageURL, imageAlt, className, contributorName }) => {
         />
       </div>
       <div>
-        <HeadingOne>{contributorName}</HeadingOne>
+        <HeadingTwo>{contributorName}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton>Download</GreenButton>
