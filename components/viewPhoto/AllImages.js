@@ -8,6 +8,13 @@ const AllImages = ({ id }) => {
   const [allPhotos, setAllPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
 
+  useEffect(() => {
+    if (data) {
+      const allPhotos = data.getAllPhotos;
+      const filterdPhotos = allPhotos.filter((photo) => photo.ID !== id);
+      setAllPhotos(filterdPhotos);
+    }
+  }, [data]);
   return (
     <div>
       <HeadingTwo>Hey we've got some nice things!</HeadingTwo>
