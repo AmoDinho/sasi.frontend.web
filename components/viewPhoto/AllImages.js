@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
 import { HeadingTwo } from "../Typography";
 import HeadingTwo from "../Typography/HeadingTwo";
+import { GET_ALL_PHOTOS } from "../../graphql/photos/queries";
 
 const AllImages = () => {
   return (
