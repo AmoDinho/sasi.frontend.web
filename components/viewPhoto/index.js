@@ -3,6 +3,9 @@ import PhotoBlock from "./PhotoBlock";
 import { useQuery } from "@apollo/client";
 import { GET_A_PHOTO } from "../../graphql/photos/queries";
 import AllImages from "./AllImages";
+/*TO-DO 
+Add mixpanel
+  */
 const ViewPhoto = (props) => {
   const { id } = props;
   const [photo, setPhoto] = useState({});

@@ -3,7 +3,9 @@ import image from "next/image";
 import HeadingTwo from "../ui/Typography/HeadingTwo";
 import BodyOne from "../ui/Typography/BodyOne";
 import GreenButton from "../ui/buttons/GreenButton";
-
+/*TO-DO 
+Add mixpanel
+  */
 const PhotoBlock = ({ photo, className, ...props }) => {
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">

@@ -9,6 +9,9 @@ import { Router } from "next/router";
 const PhotoCard = ({ photo, imageAlt, className }) => {
   const [show, setShow] = useState(false);
   const router = useRouter();
+  /*TO-DO 
+Add mixpanel
+  */
   return (
     <div
       // style={{

@@ -7,6 +7,9 @@ const AllImages = ({ id }) => {
   const [allPhotos, setAllPhotos] = useState([]);
   const { data, loading, error } = useQuery(GET_ALL_PHOTOS);
 
+  /*TO-DO 
+Add mixpanel
+  */
   useEffect(() => {
     if (data) {
       const allPhotos = data.getAllPhotos;
