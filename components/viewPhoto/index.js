@@ -19,6 +19,8 @@ const ViewPhoto = (props) => {
     }
   }, [data]);
 
+  if (loading) return <p>Loading</p>;
+  if (error) return <p>ALL out of SAS.</p>;
   return (
     <>
       <PhotoBlock photo={photo} />
