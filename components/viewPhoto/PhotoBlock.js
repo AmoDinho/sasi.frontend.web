@@ -6,7 +6,7 @@ import GreenButton from "../ui/buttons/GreenButton";
 
 const PhotoBlock = ({ photo, className, ...props }) => {
   return (
-    <div className=" grid-rows-2 grid-flow-col gap-2">
+    <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
       <div>
         <img
           src={photo.s3URL}
