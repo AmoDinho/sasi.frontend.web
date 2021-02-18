@@ -11,7 +11,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <img
           src={photo.s3URL}
           alt={`Sasi-images`}
-          className={`${className} rounded-lg`}
+          className={`${className} rounded-lg h-auto`}
         />
       </div>
       <div>
