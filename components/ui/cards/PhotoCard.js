@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Router } from "next/router";
 // add inclick event that direcst to photo
 // passes ID in function
 //routing ;ibrary in next
 const PhotoCard = ({ photo, imageAlt, className }) => {
   const [show, setShow] = useState(false);
+  const router = useRouter();
   return (
     <div
       // style={{
