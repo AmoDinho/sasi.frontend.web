@@ -23,7 +23,7 @@ const ViewPhoto = (props) => {
   if (loading) return <p>Loading</p>;
   if (error) return <p>ALL out of SAS.</p>;
   return (
-    <div className="grid grid-rows-2">
+    <div className="grid grid-rows-2 gap-5">
       <PhotoBlock photo={photo} />
       <AllImages id={id} />
     </div>

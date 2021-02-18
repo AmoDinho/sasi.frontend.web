@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { HeadingTwo } from "../Typography";
-import HeadingTwo from "../Typography/HeadingTwo";
+import { HeadingTwo } from "../ui/Typography";
 import { GET_ALL_PHOTOS } from "../../graphql/photos/queries";
 import PhotoCard from "../ui/cards/PhotoCard";
 const AllImages = ({ id }) => {
