@@ -9,13 +9,13 @@ const PhotoBlock = ({ photo, className, ...props }) => {
     <div className=" grid-rows-2 grid-flow-col gap-2">
       <div>
         <img
-          src={photo.imageURL}
-          alt={imageAlt}
+          src={photo.s3URL}
+          alt={`Sasi-images`}
           className={`${className} rounded-lg`}
         />
       </div>
       <div>
-        <HeadingTwo>{contributorName}</HeadingTwo>
+        <HeadingTwo>{photo.contributorUsername}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton>Download</GreenButton>
