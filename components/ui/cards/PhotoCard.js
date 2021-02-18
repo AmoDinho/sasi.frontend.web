@@ -1,25 +1,28 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import { Router } from "next/router";
 // add inclick event that direcst to photo
 // passes ID in function
 //routing ;ibrary in next
-const PhotoCard = ({ imageURL, imageAlt, className }) => {
+const PhotoCard = ({ photo, imageAlt, className }) => {
   const [show, setShow] = useState(false);
   return (
     <div
-    // style={{
-    //   backgroundImage: `url(${imageURL})`,
-    //   backgroundsize: "cover",
-    //   backgroundRepeat: "no-repeat",
-    //   backgroundPosition: "center center",
-    //   backgroundAttachment: "fixed",
-    // }}
-    // onMouseOver={() => setShow(!show)}
-    // onMouseLeave={() => setShow(!show)}
+      // style={{
+      //   backgroundImage: `url(${imageURL})`,
+      //   backgroundsize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center center",
+      //   backgroundAttachment: "fixed",
+      // }}
+      // onMouseOver={() => setShow(!show)}
+      // onMouseLeave={() => setShow(!show)}
+      onClick={() => router.push(`/photo/${photo.ID}`)}
+      className={`cursor-auto`}
     >
       <img
-        src={imageURL}
+        src={photo.s3URL}
         alt={imageAlt}
         className={`${className} rounded-lg `}
         // onMouseOver={() => setShow(!show)}
