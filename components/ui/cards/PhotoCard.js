@@ -21,7 +21,7 @@ const PhotoCard = ({ photo, imageAlt, className }) => {
       // onMouseOver={() => setShow(!show)}
       // onMouseLeave={() => setShow(!show)}
       onClick={() => router.push(`/photo/${photo.ID}`)}
-      className={`cursor-auto`}
+      className={`cursor-pointer`}
     >
       <img
         src={photo.s3URL}
