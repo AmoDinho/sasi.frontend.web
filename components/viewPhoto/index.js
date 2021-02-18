@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { GET_A_PHOTO } from "../../graphql/photos/queries";
 const ViewPhoto = (props) => {
   const { id } = props;
+  const [photo, setPhoto] = useState({});
   const { data, loading, error } = useQuery(GET_A_PHOTO, {
     variables: {
       ID: id,
@@ -11,11 +12,13 @@ const ViewPhoto = (props) => {
   });
 
   //useEffect
-  //useState Hook
-  if (data) {
-    console.log(data);
-    // setPhoto(data.getAPhoto)
-  }
+  useEffect(() => {
+    //useState Hook
+    if (data) {
+      setPhoto(data.getAPhoto);
+    }
+  }, [data]);
+
   return (
     <>
       <PhotoBlock photo={photo} />
