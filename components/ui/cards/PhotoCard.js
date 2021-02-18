@@ -1,18 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 // add inclick event that direcst to photo
 // passes ID in function
 //routing ;ibrary in next
 const PhotoCard = ({ imageURL, imageAlt, className }) => {
+  const [show, setShow] = useState(false);
   return (
-    <img
-      src={imageURL}
-      alt={imageAlt}
-      className={`${className} rounded-lg`}
-      //   width={250}
-      //   height={100}
-    />
+    <div
+    // style={{
+    //   backgroundImage: `url(${imageURL})`,
+    //   backgroundsize: "cover",
+    //   backgroundRepeat: "no-repeat",
+    //   backgroundPosition: "center center",
+    //   backgroundAttachment: "fixed",
+    // }}
+    // onMouseOver={() => setShow(!show)}
+    // onMouseLeave={() => setShow(!show)}
+    >
+      <img
+        src={imageURL}
+        alt={imageAlt}
+        className={`${className} rounded-lg `}
+        // onMouseOver={() => setShow(!show)}
+        // onMouseLeave={() => setShow(!show)}
+        //   width={250}
+        //   height={100}
+      />
+      {show && (
+        <p
+          className="text-lg text-red-700 z-30"
+          style={{ zIndex: "300000000" }}
+        >
+          Hi
+        </p>
+      )}
+    </div>
   );
 };
 
