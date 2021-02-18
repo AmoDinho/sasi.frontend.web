@@ -50,7 +50,7 @@ const IndexPage = () => {
         {data.getAllPhotos.length !== 0 &&
           data.getAllPhotos.map((photo) => (
             <PhotoCard
-              imageURL={photo.s3URL}
+              photo={photo}
               key={photo.ID}
               imageAlt={photo.ID}
               // className={thing}
