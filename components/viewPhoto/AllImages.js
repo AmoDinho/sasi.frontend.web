@@ -15,6 +15,9 @@ const AllImages = ({ id }) => {
       setAllPhotos(filterdPhotos);
     }
   }, [data]);
+
+  if (loading) return <p>Loading</p>;
+  if (error) return <p>ALL out of SAS.</p>;
   return (
     <div>
       <HeadingTwo>Hey we've got some nice things!</HeadingTwo>
