@@ -14,9 +14,9 @@ const PurchaseModal = (props) => {
             You can still download the image without leaving your email, we just
             want to send you updates when our Authors gives us more cool content
           </BodyOne>
-          <div>
-            <Input />
-            <GreenButton>Subscribe</GreenButton>
+          <div className="flex ">
+            <Input className="rounded-l-lg mr-0 p-4" />
+            <GreenButton className="rounded-r-lg">Subscribe</GreenButton>
           </div>
         </div>
       </Modal>
