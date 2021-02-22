@@ -24,7 +24,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <HeadingTwo>{photo.contributorUsername}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne>But we would really appreciate it</BodyOne>
-        <GreenButton>Download</GreenButton>
+        <GreenButton onClick={onOpen}>Download</GreenButton>
       </div>
       <PurchaseModal isOpen={isOpen} />
     </div>
