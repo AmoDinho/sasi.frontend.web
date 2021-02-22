@@ -5,7 +5,7 @@ import { HeadingOne, BodyOne } from "../ui/Typography";
 const PurchaseModal = (props) => {
   return (
     <>
-      <Modal isOpen={props.isOpen}>
+      <Modal isOpen={props.isOpen} onClose={props.onClose}>
         <div>
           <HeadingOne>Please leave your email before you download</HeadingOne>
           <BodyOne>
