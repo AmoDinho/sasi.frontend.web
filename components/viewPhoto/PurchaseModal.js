@@ -8,6 +8,12 @@ import { HeadingOne, BodyOne } from "../ui/Typography";
 import Input from "../ui/inputs/Input";
 import { GreenButton } from "../ui/buttons";
 const PurchaseModal = (props) => {
+  const [downloadPhoto, { loading, data, erro }] = useMutation(
+    CREATE_PURCHASE,
+    {
+      client: purchaseClient,
+    }
+  );
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
