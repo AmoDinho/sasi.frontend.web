@@ -8,6 +8,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import PropTypes from "prop-types";
 const PurchaseModal = ({ props, children }) => {
   return (
     <>
@@ -19,4 +20,9 @@ const PurchaseModal = ({ props, children }) => {
   );
 };
 
+PurchaseModal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  children: PropTypes.node,
+};
 export default PurchaseModal;
