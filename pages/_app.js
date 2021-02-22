@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "../lib/apolloClient";
 import { useRouter } from "next/router";
@@ -43,7 +44,9 @@ export default function App({ Component, pageProps }) {
           }}
         />
       </Head>
-      <Component {...pageProps} />
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </ApolloProvider>
   );
 }
