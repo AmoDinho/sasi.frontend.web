@@ -3,7 +3,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import image from "next/image";
 import HeadingTwo from "../ui/Typography/HeadingTwo";
 import BodyOne from "../ui/Typography/BodyOne";
-import GreenButton from "../ui/buttons/GreenButton";
+import { GreenButton } from "../ui/buttons";
 import PurchaseModal from "./PurchaseModal";
 /*TO-DO 
 Add mixpanel
