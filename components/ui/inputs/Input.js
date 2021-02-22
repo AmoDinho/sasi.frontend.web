@@ -5,6 +5,7 @@ const Input = ({ className, value, onChange, ...props }) => {
   return (
     <input
       className={`${className} 
+      text-black
       bg-white 
       rounded-px 
       py-3
