@@ -9,10 +9,10 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-const Modal = ({ props, children }) => {
+const ModalDefault = ({ isOpen, onClose, children }) => {
   return (
     <>
-      <Modal isOpen={props.isOpen} onClose={props.onClose}>
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>{children}</ModalContent>
       </Modal>
@@ -20,9 +20,9 @@ const Modal = ({ props, children }) => {
   );
 };
 
-Modal.propTypes = {
+ModalDefault.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   children: PropTypes.node,
 };
-export default Modal;
+export default ModalDefault;

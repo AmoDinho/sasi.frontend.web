@@ -1,12 +1,16 @@
 import React from "react";
+import { useDisclosure } from "@chakra-ui/react";
 import image from "next/image";
 import HeadingTwo from "../ui/Typography/HeadingTwo";
 import BodyOne from "../ui/Typography/BodyOne";
 import GreenButton from "../ui/buttons/GreenButton";
+import PurchaseModal from "./PurchaseModal";
 /*TO-DO 
 Add mixpanel
   */
 const PhotoBlock = ({ photo, className, ...props }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
       <div>
@@ -22,6 +26,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton>Download</GreenButton>
       </div>
+      <PurchaseModal isOpen={isOpen} />
     </div>
   );
 };
