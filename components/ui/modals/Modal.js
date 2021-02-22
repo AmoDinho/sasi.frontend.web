@@ -14,7 +14,7 @@ const ModalDefault = ({ isOpen, onClose, children }) => {
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>{children}</ModalContent>
+        <ModalContent className="p-5">{children}</ModalContent>
       </Modal>
     </>
   );
