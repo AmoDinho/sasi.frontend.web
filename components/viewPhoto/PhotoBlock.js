@@ -26,7 +26,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton onClick={onOpen}>Download</GreenButton>
       </div>
-      <PurchaseModal isOpen={isOpen} onClose={onClose} />
+      <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
   );
 };
