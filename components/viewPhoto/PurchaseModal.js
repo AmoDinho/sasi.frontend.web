@@ -8,7 +8,7 @@ import { HeadingOne, BodyOne } from "../ui/Typography";
 import Input from "../ui/inputs/Input";
 import { GreenButton } from "../ui/buttons";
 const PurchaseModal = (props) => {
-  const [downloadPhoto, { loading, data, erro }] = useMutation(
+  const [downloadPhoto, { loading, data, error }] = useMutation(
     CREATE_PURCHASE,
     {
       client: purchaseClient,
