@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "../lib/apolloClient";
 import { useRouter } from "next/router";
@@ -24,6 +24,12 @@ export default function App({ Component, pageProps }) {
       router.events.off("routeChangeComplete", logPageView);
     };
   }, [router.events]);
+  const config = {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+  };
+  // 3. extend the theme
+  const theme = extendTheme({ config });
 
   return (
     <ApolloProvider client={apolloClient}>
@@ -44,7 +50,7 @@ export default function App({ Component, pageProps }) {
           }}
         />
       </Head>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
     </ApolloProvider>
