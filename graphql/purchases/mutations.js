@@ -1,4 +1,4 @@
-import { gql } from "graphql-tag";
+import gql from "graphql-tag";
 
 export const CREATE_PURCHASE = gql`
   mutation CREATE_PURCHASE($purchaseInput: PurchaseInput!) {
