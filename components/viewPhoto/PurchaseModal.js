@@ -47,7 +47,10 @@ const PurchaseModal = (props) => {
             </BodyOne>
             {error && <p className="text-red-700">{error.message}</p>}
             <div className="flex ">
-              <Input className="rounded-l-lg mr-0 p-4" />
+              <Input
+                className="rounded-l-lg mr-0 p-4"
+                onChange={(e) => setEmail(e.currentTarget.value)}
+              />
               <GreenButton className="rounded-r-lg">Subscribe</GreenButton>
             </div>
           </div>
