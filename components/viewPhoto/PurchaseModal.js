@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Spinner } from "@chakra-ui/react";
 import { purchaseClient } from "../../graphql/clients";
 import { useMutation } from "@apollo/client";
@@ -15,20 +15,24 @@ const PurchaseModal = (props) => {
       client: purchaseClient,
     }
   );
-
-  const getPhoto = async ()=>{
+  const [email, setEmail] = useState("");
+  const { photoID, contributorID, s3URL, contributorUsername } = props.photo;
+  const getPhoto = async () => {
     await downloadPhoto({
-      variables:{
-        purchase:{
-          photoID: String!
-          contributorID: String!
-          contributorUsername:String!
-          customerEmail: String!
-          photo: PhotoInput
-        }
-      }
-    })
-  }
+      variables: {
+        purchase: {
+          photoID: photoID,
+          contributorID: contributorID,
+          contributorUsername: contributorUsername,
+          customerEmail: email,
+          photo: {
+            name: "IDK",
+            imageURL: s3URL,
+          },
+        },
+      },
+    });
+  };
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>

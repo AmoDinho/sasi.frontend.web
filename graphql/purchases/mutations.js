@@ -11,6 +11,7 @@ export const CREATE_PURCHASE = gql`
       dateCreated
       customerEmail
       contributorUsername
+      contributorID
     }
   }
 `;
