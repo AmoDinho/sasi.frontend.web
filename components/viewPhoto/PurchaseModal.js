@@ -40,7 +40,18 @@ const PurchaseModal = (props) => {
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
-        {!loading && data && called && <div>Success</div>}
+        {!loading && data && called && (
+          <div>
+            Success
+            <a
+              href={data.createPurchase.photo.imageURL}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Download photo
+            </a>
+          </div>
+        )}
         {!loading && !data && (
           <div>
             <HeadingOne>Please leave your email before you download</HeadingOne>
