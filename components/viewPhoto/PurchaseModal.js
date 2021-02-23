@@ -37,10 +37,10 @@ const PurchaseModal = (props) => {
   if (data) {
     console.log("data", data);
 
-    const a = document.createElement("a");
-    a.href = data.createPurchase.photo.imageURL;
-    document.body.appendChild(a);
-    a.click();
+    // const a = document.createElement("a");
+    // a.href = data.createPurchase.photo.imageURL;
+    // document.body.appendChild(a);
+    // a.click();
   }
   return (
     <>
@@ -50,7 +50,7 @@ const PurchaseModal = (props) => {
             Success
             <a
               href={data.createPurchase.photo.imageURL}
-              download
+              download="xsf.png"
               // rel="noreferrer"
               // target="_blank"
             >
