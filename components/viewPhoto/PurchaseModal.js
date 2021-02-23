@@ -16,10 +16,23 @@ const PurchaseModal = (props) => {
     }
   );
 
+  const getPhoto = async ()=>{
+    await downloadPhoto({
+      variables:{
+        purchase:{
+          photoID: String!
+          contributorID: String!
+          contributorUsername:String!
+          customerEmail: String!
+          photo: PhotoInput
+        }
+      }
+    })
+  }
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
-        {!loading && data(<div>Success</div>)}
+        {!loading && data && <div>Success</div>}
         {!loading && !data && (
           <div>
             <HeadingOne>Please leave your email before you download</HeadingOne>
