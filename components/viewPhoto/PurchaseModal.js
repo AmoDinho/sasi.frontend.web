@@ -9,19 +9,19 @@ import { HeadingOne, BodyOne } from "../ui/Typography";
 import Input from "../ui/inputs/Input";
 import { GreenButton } from "../ui/buttons";
 const PurchaseModal = (props) => {
-  const [downloadPhoto, { loading, data, error }] = useMutation(
+  const [downloadPhoto, { loading, data, error, called }] = useMutation(
     CREATE_PURCHASE,
     {
       client: purchaseClient,
     }
   );
   const [email, setEmail] = useState("");
-  const { photoID, contributorID, s3URL, contributorUsername } = props.photo;
+  const { ID, contributorID, s3URL, contributorUsername } = props.photo;
   const getPhoto = async () => {
     await downloadPhoto({
       variables: {
-        purchase: {
-          photoID: photoID,
+        purchaseInput: {
+          photoID: ID,
           contributorID: contributorID,
           contributorUsername: contributorUsername,
           customerEmail: email,
@@ -33,10 +33,14 @@ const PurchaseModal = (props) => {
       },
     });
   };
+
+  if (data) {
+    console.log("data", data);
+  }
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
-        {!loading && data && <div>Success</div>}
+        {!loading && data && called && <div>Success</div>}
         {!loading && !data && (
           <div>
             <HeadingOne>Please leave your email before you download</HeadingOne>
@@ -51,7 +55,9 @@ const PurchaseModal = (props) => {
                 className="rounded-l-lg mr-0 p-4"
                 onChange={(e) => setEmail(e.currentTarget.value)}
               />
-              <GreenButton className="rounded-r-lg">Subscribe</GreenButton>
+              <GreenButton className="rounded-r-lg" onClick={() => getPhoto()}>
+                Subscribe
+              </GreenButton>
             </div>
           </div>
         )}
