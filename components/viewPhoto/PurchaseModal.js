@@ -19,7 +19,8 @@ const PurchaseModal = (props) => {
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
-        {!loading && (
+        {!loading && data(<div>Success</div>)}
+        {!loading && !data && (
           <div>
             <HeadingOne>Please leave your email before you download</HeadingOne>
             <BodyOne>
