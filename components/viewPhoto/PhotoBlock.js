@@ -12,7 +12,11 @@ Add mixpanel
   */
 const PhotoBlock = ({ photo, className, ...props }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { loading, error, data } = useQuery(GET_A_USER, {
+    variables: {
+      ID: photo.contributorID,
+    },
+  });
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
       <div>
