@@ -1,10 +1,14 @@
 import ViewPhoto from "../../components/viewPhoto";
 import { useRouter } from "next/router";
-
+import App from "../../components/App";
 const ViewAPhoto = (query) => {
   const router = useRouter();
   const { id } = router.query;
-  return <ViewPhoto id={id} />;
+  return (
+    <App>
+      <ViewPhoto id={id} />
+    </App>
+  );
 };
 
 export default ViewAPhoto;
