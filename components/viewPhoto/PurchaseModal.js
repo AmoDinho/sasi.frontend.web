@@ -37,10 +37,11 @@ const PurchaseModal = (props) => {
   if (data) {
     console.log("data", data);
 
-    // const a = document.createElement("a");
-    // a.href = data.createPurchase.photo.imageURL;
-    // document.body.appendChild(a);
-    // a.click();
+    const a = document.createElement("a");
+    a.href = data.createPurchase.photo.imageURL;
+    document.body.appendChild(a);
+    a.setAttribute("download", "filename.png");
+    a.click();
   }
   return (
     <>
