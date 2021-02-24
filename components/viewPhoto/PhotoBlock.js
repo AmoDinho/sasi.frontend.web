@@ -25,6 +25,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton onClick={onOpen}>Download</GreenButton>
+        <div></div>
       </div>
       <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
