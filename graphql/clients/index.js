@@ -5,6 +5,6 @@ export const purchaseClient = new ApolloClient({
 });
 
 export const usersClient = new ApolloClient({
-  uri: NEXT_PUBLIC_USERS_URL,
+  uri: process.env.NEXT_PUBLIC_USERS_URL,
   cache: new InMemoryCache(),
 });
