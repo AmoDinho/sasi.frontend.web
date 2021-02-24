@@ -33,7 +33,18 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton onClick={onOpen}>Download</GreenButton>
-        <div></div>
+        <div>
+          {loading && <p>Busy getting it</p>}
+          {!loading && data && (
+            <>
+              {data.getAUser.socialAccounts.map((account, idx) => (
+                <SocailButton key={idx} url={account.url}>
+                  {socialIcons[account.name]}
+                </SocailButton>
+              ))}
+            </>
+          )}
+        </div>
       </div>
       <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
