@@ -7,6 +7,8 @@ import HeadingTwo from "../ui/Typography/HeadingTwo";
 import BodyOne from "../ui/Typography/BodyOne";
 import { GreenButton } from "../ui/buttons";
 import PurchaseModal from "./PurchaseModal";
+import { SocailButton } from "../ui/buttons";
+import { socialIcons } from "../../constants";
 /*TO-DO 
 Add mixpanel
   */
