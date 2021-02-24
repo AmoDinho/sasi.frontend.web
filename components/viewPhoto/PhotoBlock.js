@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_A_USER } from "../../graphql/users/queries";
+import { usersClient } from "../../graphql/clients";
 import { useDisclosure } from "@chakra-ui/react";
 import image from "next/image";
 import HeadingTwo from "../ui/Typography/HeadingTwo";
@@ -18,6 +19,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
     variables: {
       ID: photo.contributorID,
     },
+    client: usersClient,
   });
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
