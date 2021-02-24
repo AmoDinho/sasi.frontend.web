@@ -1,4 +1,6 @@
 import React from "react";
+import { useQuery } from "@apollo/client";
+import { GET_A_USER } from "../../graphql/users/queries";
 import { useDisclosure } from "@chakra-ui/react";
 import image from "next/image";
 import HeadingTwo from "../ui/Typography/HeadingTwo";
