@@ -4,6 +4,7 @@ import Image from "next/image";
 // add inclick event that direcst to photo
 // passes ID in function
 //routing ;ibrary in next
+//next js projects with apollo
 const PhotoCard = ({ imageURL, imageAlt, className }) => {
   return (
     <img
