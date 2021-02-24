@@ -7,7 +7,7 @@ import HeadingTwo from "../ui/Typography/HeadingTwo";
 import BodyOne from "../ui/Typography/BodyOne";
 import { GreenButton } from "../ui/buttons";
 import PurchaseModal from "./PurchaseModal";
-import { SocailButton } from "../ui/buttons";
+import { SocialButton } from "../ui/buttons";
 import { socialIcons } from "../../constants";
 /*TO-DO 
 Add mixpanel
@@ -38,9 +38,9 @@ const PhotoBlock = ({ photo, className, ...props }) => {
           {!loading && data && (
             <>
               {data.getAUser.socialAccounts.map((account, idx) => (
-                <SocailButton key={idx} url={account.url}>
+                <SocialButton key={idx} url={account.url}>
                   {socialIcons[account.name]}
-                </SocailButton>
+                </SocialButton>
               ))}
             </>
           )}

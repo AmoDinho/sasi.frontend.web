@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Spinner } from "@chakra-ui/react";
-import { saveAs } from "file-saver";
 import { purchaseClient } from "../../graphql/clients";
 import { useMutation } from "@apollo/client";
 import { CREATE_PURCHASE } from "../../graphql/purchases/mutations";
