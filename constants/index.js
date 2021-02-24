@@ -12,10 +12,10 @@ export const track = (name, props) => {
 };
 
 export const socialIcons = {
-  Instagram: faInstagram,
-  Twitter: faTwitter,
-  Facebook: faFacebookF,
-  Pinterest: faPinterest,
+  Instagram: <FontAwesomeIcon icon={faInstagram} />,
+  Twitter: <FontAwesomeIcon icon={faTwitter} />,
+  Facebook: <FontAwesomeIcon icon={faFacebookF} />,
+  Pinterest: <FontAwesomeIcon icon={faPinterest} />,
 };
 export const socialLinks = [
   {

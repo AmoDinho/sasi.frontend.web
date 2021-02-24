@@ -36,7 +36,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <BodyOne>But we would really appreciate it</BodyOne>
         <GreenButton onClick={onOpen}>Download</GreenButton>
         <div>
-          {loading && <p>Busy getting it</p>}
+          {loading && !data && <p>Busy getting it</p>}
           {!loading && data && (
             <>
               {data.getAUser.socialAccounts.map((account, idx) => (
