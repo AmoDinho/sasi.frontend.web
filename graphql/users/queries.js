@@ -4,13 +4,15 @@ export const GET_A_USER = gql`
   query GET_A_USER($ID: String!) {
     getAUser(ID: $ID) {
       ID
-      contributorID
-      contributorUsername
-      createdAt
-      updatedAt
-      s3URL
-      fileSize
-      dimensions
+      username
+      name
+      surname
+      email
+      type
+      socialAccounts {
+        name
+        url
+      }
     }
   }
 `;
