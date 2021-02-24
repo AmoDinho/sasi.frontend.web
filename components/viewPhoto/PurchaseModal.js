@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Spinner } from "@chakra-ui/react";
+import { saveAs } from "file-saver";
 import { purchaseClient } from "../../graphql/clients";
 import { useMutation } from "@apollo/client";
 import { CREATE_PURCHASE } from "../../graphql/purchases/mutations";
@@ -37,11 +38,12 @@ const PurchaseModal = (props) => {
   if (data) {
     console.log("data", data);
 
-    const a = document.createElement("a");
-    a.href = data.createPurchase.photo.imageURL;
-    document.body.appendChild(a);
-    a.setAttribute("download", "filename.png");
-    a.click();
+    // const a = document.createElement("a");
+    // a.href = data.createPurchase.photo.imageURL;
+    // document.body.appendChild(a);
+    // a.setAttribute("download", "filename.png");
+    // a.click();
+    // saveAs(data.createPurchase.photo.imageURL, "file.png");
   }
   return (
     <>
