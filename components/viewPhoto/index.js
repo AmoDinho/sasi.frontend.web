@@ -18,7 +18,9 @@ const ViewPhoto = (props) => {
 
   //useEffect
   useEffect(() => {
-    track(`App.ViewPhoto.${id.slice(0, 5)}`);
+    track(`App.ViewPhoto`, {
+      photoID: id.slice(0, 5),
+    });
   }, []);
   useEffect(() => {
     //useState Hook
