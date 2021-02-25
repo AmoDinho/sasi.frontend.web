@@ -10,11 +10,18 @@ import { GreenButton } from "../ui/buttons";
 import PurchaseModal from "./PurchaseModal";
 import { SocialButton } from "../ui/buttons";
 import { socialIcons } from "../../constants";
+import AttributionModal from "./AttributionModal";
 /*TO-DO 
 Add mixpanel
   */
 const PhotoBlock = ({ photo, className, ...props }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: { isAttributionOpen },
+    onOpen: { onAtributionOpen },
+    onClose: { onAttributionClose },
+  } = useDisclosure();
+
   const { loading, error, data } = useQuery(GET_A_USER, {
     variables: {
       ID: photo.contributorID,
@@ -48,6 +55,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
           )}
         </div>
       </div>
+      <AttributionModal />
       <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
   );
