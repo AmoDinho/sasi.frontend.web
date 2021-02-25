@@ -55,7 +55,11 @@ const PhotoBlock = ({ photo, className, ...props }) => {
           )}
         </div>
       </div>
-      <AttributionModal />
+      <AttributionModal
+        isOpen={isAttributionOpen}
+        onClose={onAttributionClose}
+        socials={data.getAUser.socialAccounts}
+      />
       <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
   );
