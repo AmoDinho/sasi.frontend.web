@@ -9,7 +9,7 @@ import BodyOne from "../ui/Typography/BodyOne";
 import { GreenButton } from "../ui/buttons";
 import PurchaseModal from "./PurchaseModal";
 import { SocialButton } from "../ui/buttons";
-import { socialIcons } from "../../constants";
+import { socialIcons, track } from "../../constants";
 import AttributionModal from "./AttributionModal";
 /*TO-DO 
 Add mixpanel
@@ -25,6 +25,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
   });
 
   const closeModal = () => setOpenModal(!openModal);
+
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
       <div>

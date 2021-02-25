@@ -3,6 +3,7 @@ import PhotoBlock from "./PhotoBlock";
 import { useQuery } from "@apollo/client";
 import { GET_A_PHOTO } from "../../graphql/photos/queries";
 import AllImages from "./AllImages";
+import { track } from "../../constants";
 /*TO-DO 
 Add mixpanel
   */
@@ -16,6 +17,9 @@ const ViewPhoto = (props) => {
   });
 
   //useEffect
+  useEffect(() => {
+    track(`App.ViewPhoto.${id.slice(0, 5)}`);
+  }, []);
   useEffect(() => {
     //useState Hook
     if (data) {
