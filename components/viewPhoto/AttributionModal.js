@@ -34,6 +34,7 @@ const AttributionModal = (props) => {
               <IconButton
                 icon={<CopyIcon onClick={() => copyToClipboard(social.url)} />}
               />
+              {hasCopied ? "Copied" : "Copy"}
             </div>
           ))}
         </div>
