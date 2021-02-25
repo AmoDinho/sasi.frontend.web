@@ -21,9 +21,9 @@ Add mixpanel
   if (loading) return <p>Loading</p>;
   if (error) return <p>ALL out of SAS.</p>;
   return (
-    <div>
-      <HeadingTwo>Hey we've got some nice things!</HeadingTwo>
-      <div>
+    <div className="p-4">
+      <HeadingTwo className="mb-5">Hey we've got some nice things!</HeadingTwo>
+      <div className="grid grid-cols-3 gap-3 ">
         {allPhotos.map((photo) => (
           <PhotoCard photo={photo} key={photo.ID} imageAlt={photo.ID} />
         ))}
