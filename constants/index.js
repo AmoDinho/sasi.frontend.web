@@ -2,6 +2,7 @@ import {
   faFacebookF,
   faInstagram,
   faTwitter,
+  faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import mixpanel from "mixpanel-browser";
@@ -10,6 +11,12 @@ export const track = (name, props) => {
   mixpanel.track(name, props);
 };
 
+export const socialIcons = {
+  Instagram: <FontAwesomeIcon icon={faInstagram} />,
+  Twitter: <FontAwesomeIcon icon={faTwitter} />,
+  Facebook: <FontAwesomeIcon icon={faFacebookF} />,
+  Pinterest: <FontAwesomeIcon icon={faPinterest} />,
+};
 export const socialLinks = [
   {
     url: "https://www.pinterest.co.uk/real_sasi/_saved/",
