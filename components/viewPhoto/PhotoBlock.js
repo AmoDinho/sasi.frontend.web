@@ -23,6 +23,8 @@ const PhotoBlock = ({ photo, className, ...props }) => {
     },
     client: usersClient,
   });
+
+  const closeModal = () => setOpenModal(!openModal);
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
       <div>
@@ -55,7 +57,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
       {data && (
         <AttributionModal
           isOpen={openModal}
-          onClose={onClose}
+          onClose={closeModal}
           socials={data.getAUser.socialAccounts}
         />
       )}
