@@ -8,6 +8,7 @@ import Modal from "../ui/modals/Modal";
 import { HeadingOne, BodyOne } from "../ui/Typography";
 import Input from "../ui/inputs/Input";
 import { GreenButton } from "../ui/buttons";
+import { track } from "../../constants";
 const PurchaseModal = (props) => {
   const [downloadPhoto, { loading, data, error, called }] = useMutation(
     CREATE_PURCHASE,
@@ -31,6 +32,11 @@ const PurchaseModal = (props) => {
           },
         },
       },
+    });
+    track("App.DownloadPhoto", {
+      photoID: ID.slice(0, 5),
+      contributor: contributorUsername,
+      customer: email,
     });
   };
 
