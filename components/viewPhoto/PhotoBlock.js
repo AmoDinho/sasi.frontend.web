@@ -3,7 +3,6 @@ import { useQuery } from "@apollo/client";
 import { GET_A_USER } from "../../graphql/users/queries";
 import { usersClient } from "../../graphql/clients";
 import { useDisclosure } from "@chakra-ui/react";
-import image from "next/image";
 import HeadingTwo from "../ui/Typography/HeadingTwo";
 import BodyOne from "../ui/Typography/BodyOne";
 import { GreenButton } from "../ui/buttons";
@@ -23,10 +22,10 @@ const PhotoBlock = ({ photo, className, ...props }) => {
     },
     client: usersClient,
   });
-  const openDownload = () => {
-    track("App.ViewPhoto.OpenDownloadModal");
-    isOpen;
-  };
+  // const openDownload = () => {
+  //   track("App.ViewPhoto.OpenDownloadModal");
+  //   isOpen;
+  // };
   const closeModal = () => setOpenModal(!openModal);
 
   return (
