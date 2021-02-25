@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import { Router } from "next/router";
+import { track } from "../../../constants";
 // add inclick event that direcst to photo
 // passes ID in function
 //routing ;ibrary in next
@@ -23,7 +22,10 @@ Add mixpanel
       // }}
       // onMouseOver={() => setShow(!show)}
       // onMouseLeave={() => setShow(!show)}
-      onClick={() => router.push(`/photo/${photo.ID}`)}
+      onClick={() => {
+        track("App.ClickToViewPhoto");
+        router.push(`/photo/${photo.ID}`);
+      }}
       className={`cursor-pointer`}
     >
       <img
