@@ -12,14 +12,6 @@ const IndexPage = () => {
   return (
     <App>
       <LandingPage />
-
-      <div className=" mt-12 p-3 flex justify-center">
-        {socialLinks.map((link, index) => (
-          <SocialButton className="mx-3 my-3" url={link.url} key={index}>
-            {link.icon}{" "}
-          </SocialButton>
-        ))}
-      </div>
     </App>
   );
 };
