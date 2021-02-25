@@ -25,7 +25,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
   });
   const openDownload = () => {
     track("App.ViewPhoto.OpenDownloadModal");
-    isOpen();
+    isOpen;
   };
   const closeModal = () => setOpenModal(!openModal);
 
@@ -71,11 +71,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
           socials={data.getAUser.socialAccounts}
         />
       )}
-      <PurchaseModal
-        isOpen={() => openDownload()}
-        onClose={onClose}
-        photo={photo}
-      />
+      <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
   );
 };
