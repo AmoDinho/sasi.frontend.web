@@ -18,7 +18,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isOpen: { isAttributionOpen },
-    onOpen: { onAtributionOpen },
+    onOpen: { onAttributionOpen },
     onClose: { onAttributionClose },
   } = useDisclosure();
 
@@ -40,7 +40,9 @@ const PhotoBlock = ({ photo, className, ...props }) => {
       <div>
         <HeadingTwo>{photo.contributorUsername}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
-        <BodyOne>But we would really appreciate it</BodyOne>
+        <BodyOne onClick={onAttributionOpen}>
+          But we would really appreciate it
+        </BodyOne>
         <GreenButton onClick={onOpen}>Download</GreenButton>
         <div>
           {loading && !data && <p>Busy getting it</p>}
