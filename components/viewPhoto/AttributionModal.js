@@ -10,9 +10,11 @@ const AttributionModal = (props) => {
   const [hasCopied, setHasCopied] = useState(false);
   const linkRef = useRef(null);
 
-  const copyToClipboard = (e) => {
-    linkRef.current.select();
-    document.execCommand("copy");
+  const copyToClipboard = async (copyMe) => {
+    // linkRef.current.id;
+    // document.execCommand("copy");
+    await navigator.clipboard.writeText(copyMe);
+
     setHasCopied(true);
   };
   console.log("linkRef", linkRef);
@@ -26,9 +28,11 @@ const AttributionModal = (props) => {
               <SocialButton key={idx} url={social.url}>
                 {socialIcons[social.name]}
               </SocialButton>
-              <p>{social.name}</p>
+              <p id={social.url} ref={linkRef}>
+                {social.name}
+              </p>
               <IconButton
-                icon={<CopyIcon onClick={() => copyToClipboard()} />}
+                icon={<CopyIcon onClick={() => copyToClipboard(social.url)} />}
               />
             </div>
           ))}
