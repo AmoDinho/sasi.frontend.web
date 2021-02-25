@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_A_USER } from "../../graphql/users/queries";
 import { usersClient } from "../../graphql/clients";
@@ -16,12 +16,7 @@ Add mixpanel
   */
 const PhotoBlock = ({ photo, className, ...props }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {
-    isOpen: { isAttributionOpen },
-    onOpen: { onAttributionOpen },
-    onClose: { onAttributionClose },
-  } = useDisclosure();
-
+  const [openModal, setOpenModal] = useState(false);
   const { loading, error, data } = useQuery(GET_A_USER, {
     variables: {
       ID: photo.contributorID,
@@ -40,7 +35,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
       <div>
         <HeadingTwo>{photo.contributorUsername}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
-        <BodyOne onClick={onAttributionOpen}>
+        <BodyOne className="cursor-auto" onClick={() => setOpenModal(true)}>
           But we would really appreciate it
         </BodyOne>
         <GreenButton onClick={onOpen}>Download</GreenButton>
@@ -57,11 +52,13 @@ const PhotoBlock = ({ photo, className, ...props }) => {
           )}
         </div>
       </div>
-      <AttributionModal
-        isOpen={isAttributionOpen}
-        onClose={onAttributionClose}
-        socials={data.getAUser.socialAccounts}
-      />
+      {data && (
+        <AttributionModal
+          isOpen={openModal}
+          onClose={onClose}
+          socials={data.getAUser.socialAccounts}
+        />
+      )}
       <PurchaseModal isOpen={isOpen} onClose={onClose} photo={photo} />
     </div>
   );

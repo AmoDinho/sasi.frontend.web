@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const BodyOne = ({ className, children, ...props }) => {
+  console.log("props", props);
   return (
     <p {...props} className={`${className}  font-display text-sm text-white`}>
       {children}
