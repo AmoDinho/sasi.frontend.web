@@ -1,4 +1,6 @@
 import React from "react";
+import { PhoneIcon, AddIcon, WarningIcon } from '@chakra-ui/icons'
+import { IconButton } from "@chakra-ui/react"
 import Modal from "../ui/modals/Modal";
 import { SocialButton } from "../ui/buttons";
 import { socialIcons } from "../../constants";
@@ -15,6 +17,7 @@ const AttributionModal = (props) => {
               {socialIcons[social.name]}
             </SocialButton>
           ))}
+<IconButton icon={}
         </div>
       </div>
     </Modal>
