@@ -3,7 +3,7 @@ import { CopyIcon } from "@chakra-ui/icons";
 import { IconButton } from "@chakra-ui/react";
 import Modal from "../ui/modals/Modal";
 import { SocialButton } from "../ui/buttons";
-import { socialIcons } from "../../constants";
+import { socialIcons, track } from "../../constants";
 import { HeadingOne } from "../ui/Typography";
 const AttributionModal = (props) => {
   const { socials } = props;
@@ -14,7 +14,7 @@ const AttributionModal = (props) => {
     // linkRef.current.id;
     // document.execCommand("copy");
     await navigator.clipboard.writeText(copyMe);
-
+    track("App.AttributionModal.ClickCopy");
     setHasCopied(true);
   };
   console.log("linkRef", linkRef);
