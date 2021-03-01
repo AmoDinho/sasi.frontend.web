@@ -35,7 +35,7 @@ const ViewPhoto = (props) => {
 
   if (loading)
     return (
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-10">
         <SingleImage />
       </div>
     );
