@@ -29,8 +29,8 @@ const PhotoBlock = ({ photo, className, ...props }) => {
   const closeModal = () => setOpenModal(!openModal);
 
   return (
-    <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
-      <div>
+    <div className="grid md:grid-rows-1 md:grid-cols-2 gap-2  sm:grid-cols-1 p-4">
+      <div className="md:mr-5">
         <img
           src={photo.s3URL}
           alt={`Sasi-images`}

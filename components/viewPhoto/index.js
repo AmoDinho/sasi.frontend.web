@@ -11,8 +11,7 @@ Add mixpanel
 const ViewPhoto = (props) => {
   const { id } = props;
   const [photo, setPhoto] = useState({});
-  let loading = true;
-  const { data, error } = useQuery(GET_A_PHOTO, {
+  const { data, loading, error } = useQuery(GET_A_PHOTO, {
     variables: {
       ID: id,
     },
