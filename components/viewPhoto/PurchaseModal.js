@@ -19,9 +19,10 @@ const PurchaseModal = (props) => {
   const [email, setEmail] = useState("");
   const toast = useToast();
 
+  const regex = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$");
   const { ID, contributorID, s3URL, contributorUsername } = props.photo;
   const getPhoto = async () => {
-    if (email !== "" && email.length > 1) {
+    if (email !== "" && email.length > 1 && regex.test(email)) {
       await downloadPhoto({
         variables: {
           purchaseInput: {
