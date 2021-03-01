@@ -53,16 +53,6 @@ const PurchaseModal = (props) => {
     }
   };
 
-  if (data) {
-    console.log("data", data);
-
-    // const a = document.createElement("a");
-    // a.href = data.createPurchase.photo.imageURL;
-    // document.body.appendChild(a);
-    // a.setAttribute("download", "filename.png");
-    // a.click();
-    // saveAs(data.createPurchase.photo.imageURL, "file.png");
-  }
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose} size="xl">
@@ -103,13 +93,15 @@ const PurchaseModal = (props) => {
           </div>
         )}
         {loading && (
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="blue.500"
-            size="xl"
-          />
+          <div className="flex justify-center">
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+            />
+          </div>
         )}
       </Modal>
     </>
