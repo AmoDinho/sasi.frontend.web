@@ -58,9 +58,11 @@ const PurchaseModal = (props) => {
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose} size="xl">
         {!loading && data && called && (
-          <div>
+          <div className="flex flex-col text-center">
+            <HeadingOne>Here is your image!</HeadingOne>
             <img src={illustration} alt="success" />
             <a
+              className="mt-4 cursor-pointer"
               href={data.createPurchase.photo.imageURL}
               download="xsf.png"
               // rel="noreferrer"
