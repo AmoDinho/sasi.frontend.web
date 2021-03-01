@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, useToast } from "@chakra-ui/react";
 import { purchaseClient } from "../../graphql/clients";
 import { useMutation } from "@apollo/client";
 import { CREATE_PURCHASE } from "../../graphql/purchases/mutations";
@@ -17,27 +17,39 @@ const PurchaseModal = (props) => {
     }
   );
   const [email, setEmail] = useState("");
+  const toast = useToast();
+
   const { ID, contributorID, s3URL, contributorUsername } = props.photo;
   const getPhoto = async () => {
-    await downloadPhoto({
-      variables: {
-        purchaseInput: {
-          photoID: ID,
-          contributorID: contributorID,
-          contributorUsername: contributorUsername,
-          customerEmail: email,
-          photo: {
-            name: "IDK",
-            imageURL: s3URL,
+    if (email !== "" && email.length > 1) {
+      await downloadPhoto({
+        variables: {
+          purchaseInput: {
+            photoID: ID,
+            contributorID: contributorID,
+            contributorUsername: contributorUsername,
+            customerEmail: email,
+            photo: {
+              name: "IDK",
+              imageURL: s3URL,
+            },
           },
         },
-      },
-    });
-    track("App.DownloadPhoto", {
-      photoID: ID.slice(0, 5),
-      contributor: contributorUsername,
-      customer: email,
-    });
+      });
+      track("App.DownloadPhoto", {
+        photoID: ID.slice(0, 5),
+        contributor: contributorUsername,
+        customer: email,
+      });
+    } else {
+      toast({
+        title: "Invalid email address",
+        description: "Please enter a valid email address",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
   };
 
   if (data) {
@@ -75,7 +87,7 @@ const PurchaseModal = (props) => {
               content
             </BodyOne>
             {error && <p className="text-red-700">{error.message}</p>}
-            <div className="flex ">
+            <div className="flex mt-4">
               <Input
                 className="rounded-l-lg mr-0 p-4"
                 onChange={(e) => setEmail(e.currentTarget.value)}
