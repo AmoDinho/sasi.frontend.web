@@ -49,17 +49,19 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         >
           But we would really appreciate it
         </BodyOne>
-        <GreenButton onClick={onOpen}>Download</GreenButton>
+        <GreenButton className="mt-3" onClick={onOpen}>
+          Download
+        </GreenButton>
         <div>
           {loading && !data && <p>Busy getting it</p>}
           {!loading && data && (
-            <>
+            <div className="flex flex-row mt-5">
               {data.getAUser.socialAccounts.map((account, idx) => (
-                <SocialButton key={idx} url={account.url}>
+                <SocialButton key={idx} url={account.url} className="mr-2">
                   {socialIcons[account.name]}
                 </SocialButton>
               ))}
-            </>
+            </div>
           )}
         </div>
       </div>
