@@ -41,7 +41,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <HeadingTwo>{photo.contributorUsername}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne
-          className="cursor-auto "
+          className="cursor-pointer "
           onClick={() => {
             setOpenModal(true);
             track("App.ViewPhoto.OpenAttributtion");
