@@ -80,7 +80,10 @@ const PurchaseModal = (props) => {
                 className="rounded-l-lg mr-0 p-4"
                 onChange={(e) => setEmail(e.currentTarget.value)}
               />
-              <GreenButton className="rounded-r-lg" onClick={() => getPhoto()}>
+              <GreenButton
+                className="rounded-bl-none rounded-tl-none"
+                onClick={() => getPhoto()}
+              >
                 Subscribe
               </GreenButton>
             </div>
