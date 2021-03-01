@@ -24,17 +24,21 @@ const AttributionModal = (props) => {
         <HeadingOne>This is how to attribute</HeadingOne>
         <div>
           {socials.map((social, idx) => (
-            <div className="flex flex-row">
+            <div className="flex justify-between mt-4">
               <SocialButton key={idx} url={social.url}>
                 {socialIcons[social.name]}
               </SocialButton>
               <p id={social.url} ref={linkRef}>
                 {social.name}
               </p>
-              <IconButton
-                icon={<CopyIcon onClick={() => copyToClipboard(social.url)} />}
-              />
-              {hasCopied ? "Copied" : "Copy"}
+              <div>
+                <IconButton
+                  icon={
+                    <CopyIcon onClick={() => copyToClipboard(social.url)} />
+                  }
+                />
+                {hasCopied ? "Copied" : "Copy"}
+              </div>
             </div>
           ))}
         </div>
