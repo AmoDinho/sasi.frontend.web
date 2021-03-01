@@ -52,7 +52,7 @@ const PurchaseModal = (props) => {
   }
   return (
     <>
-      <Modal isOpen={props.isOpen} onClose={props.onClose}>
+      <Modal isOpen={props.isOpen} onClose={props.onClose} size="xl">
         {!loading && data && called && (
           <div>
             Success
