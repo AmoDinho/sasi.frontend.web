@@ -4,13 +4,15 @@ import { useQuery } from "@apollo/client";
 import { GET_A_PHOTO } from "../../graphql/photos/queries";
 import AllImages from "./AllImages";
 import { track } from "../../constants";
+import { SingleImage } from "../ui/loaders";
 /*TO-DO 
 Add mixpanel
   */
 const ViewPhoto = (props) => {
   const { id } = props;
   const [photo, setPhoto] = useState({});
-  const { data, loading, error } = useQuery(GET_A_PHOTO, {
+  let loading = true;
+  const { data, error } = useQuery(GET_A_PHOTO, {
     variables: {
       ID: id,
     },
@@ -31,7 +33,12 @@ const ViewPhoto = (props) => {
     }
   }, [data]);
 
-  if (loading) return <p>Loading</p>;
+  if (loading)
+    return (
+      <div className="flex justify-center">
+        <SingleImage />
+      </div>
+    );
   if (error) return <p>ALL out of SAS.</p>;
   return (
     <div className="flex flex-col">
