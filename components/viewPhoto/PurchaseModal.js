@@ -9,6 +9,7 @@ import { HeadingOne, BodyOne } from "../ui/Typography";
 import Input from "../ui/inputs/Input";
 import { GreenButton } from "../ui/buttons";
 import { track } from "../../constants";
+import illustration from "../../assets/taxi.png";
 const PurchaseModal = (props) => {
   const [downloadPhoto, { loading, data, error, called }] = useMutation(
     CREATE_PURCHASE,
@@ -58,7 +59,7 @@ const PurchaseModal = (props) => {
       <Modal isOpen={props.isOpen} onClose={props.onClose} size="xl">
         {!loading && data && called && (
           <div>
-            Success
+            <img src={illustration} alt="success" />
             <a
               href={data.createPurchase.photo.imageURL}
               download="xsf.png"
