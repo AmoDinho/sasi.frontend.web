@@ -9,14 +9,11 @@ const NavBar = () => {
 
   return (
     <header className="border-top bg-transparent flex justify-center flex-wrap p-6">
-      <div className="flex items-center flex-no-shrink text">
-        <Image
-          src={Logo}
-          alt="Sasi logo"
-          height={100}
-          width={40}
-          onClick={() => router.push("/")}
-        />
+      <div
+        className="flex items-center flex-no-shrink text cursor-pointer"
+        onClick={() => router.push("/")}
+      >
+        <Image src={Logo} alt="Sasi logo" height={100} width={40} />
         <HeadingOne className="  text-white  text-center">SASI</HeadingOne>
       </div>
     </header>
