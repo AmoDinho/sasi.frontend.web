@@ -4,7 +4,7 @@ import { IconButton } from "@chakra-ui/react";
 import Modal from "../ui/modals/Modal";
 import { SocialButton } from "../ui/buttons";
 import { socialIcons, track } from "../../constants";
-import { HeadingOne } from "../ui/Typography";
+import { HeadingOne, BodyOne } from "../ui/Typography";
 const AttributionModal = (props) => {
   const { socials } = props;
   const [hasCopied, setHasCopied] = useState(false);
@@ -22,6 +22,11 @@ const AttributionModal = (props) => {
     <Modal isOpen={props.isOpen} onClose={() => props.onClose()}>
       <div className="p-5">
         <HeadingOne>This is how to attribute</HeadingOne>
+        <BodyOne>
+          {" "}
+          You can simply attribute by linking the contributors social wherever
+          you use their photos
+        </BodyOne>
         <div>
           {socials.map((social, idx) => (
             <div className="flex justify-between mt-4">
