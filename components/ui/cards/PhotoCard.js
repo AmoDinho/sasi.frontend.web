@@ -26,7 +26,7 @@ Add mixpanel
         track("App.ClickToViewPhoto");
         router.push(`/photo/${photo.ID}`);
       }}
-      className={`cursor-pointer`}
+      className={`cursor-pointer w-full h-full`}
     >
       <img
         src={photo.s3URL}

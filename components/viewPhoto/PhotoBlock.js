@@ -29,8 +29,8 @@ const PhotoBlock = ({ photo, className, ...props }) => {
   const closeModal = () => setOpenModal(!openModal);
 
   return (
-    <div className="grid grid-rows-1 grid-cols-2 gap-2 p-4">
-      <div>
+    <div className="grid md:grid-rows-1 md:grid-cols-2 gap-2  sm:grid-cols-1 p-4">
+      <div className="md:mr-5">
         <img
           src={photo.s3URL}
           alt={`Sasi-images`}
@@ -41,25 +41,28 @@ const PhotoBlock = ({ photo, className, ...props }) => {
         <HeadingTwo>{photo.contributorUsername}</HeadingTwo>
         <BodyOne className="font-bold">Attribution is not mandatory</BodyOne>
         <BodyOne
-          className="cursor-auto"
+          className="cursor-pointer "
           onClick={() => {
             setOpenModal(true);
             track("App.ViewPhoto.OpenAttributtion");
           }}
         >
-          But we would really appreciate it
+          But here is how you can do it!
         </BodyOne>
-        <GreenButton onClick={onOpen}>Download</GreenButton>
+
+        <GreenButton className="mt-3" onClick={onOpen}>
+          Download
+        </GreenButton>
         <div>
-          {loading && !data && <p>Busy getting it</p>}
+          {loading && !data && <p>Busy fetching socials...</p>}
           {!loading && data && (
-            <>
+            <div className="flex flex-row mt-5">
               {data.getAUser.socialAccounts.map((account, idx) => (
-                <SocialButton key={idx} url={account.url}>
+                <SocialButton key={idx} url={account.url} className="mr-2">
                   {socialIcons[account.name]}
                 </SocialButton>
               ))}
-            </>
+            </div>
           )}
         </div>
       </div>
