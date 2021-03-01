@@ -24,7 +24,7 @@ const AttributionModal = (props) => {
         <HeadingOne>This is how to attribute</HeadingOne>
         <div>
           {socials.map((social, idx) => (
-            <div>
+            <div className="flex flex-row">
               <SocialButton key={idx} url={social.url}>
                 {socialIcons[social.name]}
               </SocialButton>

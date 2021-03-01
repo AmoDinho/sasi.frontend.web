@@ -54,7 +54,7 @@ const PhotoBlock = ({ photo, className, ...props }) => {
           Download
         </GreenButton>
         <div>
-          {loading && !data && <p>Busy getting it</p>}
+          {loading && !data && <p>Busy fetching socials...</p>}
           {!loading && data && (
             <div className="flex flex-row mt-5">
               {data.getAUser.socialAccounts.map((account, idx) => (
