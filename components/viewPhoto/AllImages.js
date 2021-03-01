@@ -23,7 +23,7 @@ Add mixpanel
   return (
     <div className="p-4">
       <HeadingTwo className="mb-5">Hey we've got some nice things!</HeadingTwo>
-      <div className="grid grid-cols-3 gap-3 ">
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-3 ">
         {allPhotos.map((photo) => (
           <PhotoCard photo={photo} key={photo.ID} imageAlt={photo.ID} />
         ))}

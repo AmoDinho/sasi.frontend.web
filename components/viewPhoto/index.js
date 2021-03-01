@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { GET_A_PHOTO } from "../../graphql/photos/queries";
 import AllImages from "./AllImages";
 import { track } from "../../constants";
+import { SingleImage } from "../ui/loaders";
 /*TO-DO 
 Add mixpanel
   */
@@ -31,7 +32,12 @@ const ViewPhoto = (props) => {
     }
   }, [data]);
 
-  if (loading) return <p>Loading</p>;
+  if (loading)
+    return (
+      <div className="flex justify-center mb-10">
+        <SingleImage />
+      </div>
+    );
   if (error) return <p>ALL out of SAS.</p>;
   return (
     <div className="flex flex-col">
